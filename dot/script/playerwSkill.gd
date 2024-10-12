@@ -6,6 +6,8 @@ var dash_speed = 40.0  # Speed when dashing
 var dash_duration = 0.3  # Duration of the dash in seconds
 var gravity = -39.8
 var jump_force = 20.0
+var attack_power = 10.0
+var max_health = 100.0
 
 # Internal state for dashing
 var is_dashing = false
@@ -25,7 +27,7 @@ var skill_tree = {
 }
 
 
-var skill_points = 0  # Points available for upgrading skills
+var skill_points = 1  # Points available for upgrading skills
 
 # variable for ui nodes
 var xp_bar
@@ -34,6 +36,10 @@ var health_bar
 var health_label
 var task_list_container
 var skill_points_label
+var skill_tree_note
+
+# Variable to track if the skill tree has been opened
+var skill_tree_opened = false
 
 func _ready():
 	# Load the PlayerUI scene
@@ -50,9 +56,10 @@ func _add_ui_scene():
 	health_label = ui_scene.get_node("HealthBar/HealthLabel")
 	task_list_container = ui_scene.get_node("TaskListContainer")
 	skill_points_label = ui_scene.get_node("SkillPointsLabel")
+	skill_tree_note = ui_scene.get_node("SkillTreeNote")
 	
 var current_xp = 0
-var xp_to_next_level = 100
+var xp_to_next_level = 50
 var level = 1
 
 func gain_xp(amount):
@@ -78,7 +85,7 @@ func level_up():
 	print("Level up! Now level", level)
 
 var current_health = 100
-var max_health = 100
+#var max_health = 100
 
 func set_health(value):
 	current_health = clamp(value, 0, max_health)
@@ -150,6 +157,9 @@ func _input(_event):
 	#	upgrade_skill("jump")
 	if Input.is_action_just_pressed("ui_open_skill_tree"):
 		open_skill_tree()
+		if not skill_tree_opened:
+			skill_tree_note.hide()
+			skill_tree_opened = true
 	elif Input.is_action_just_pressed("ui_debug"):  # Assuming "ui_debug" is mapped to a key like "D"
 		debug_player_stats()
 
@@ -172,7 +182,18 @@ func upgrade_skill(skill_name: String):
 			
 			# Update the skill points label when a skill is upgraded
 			skill_points_label.text = "Skill Points: %d" % skill_points
+			
+			 # Update global player stats based on the skill upgraded
+			if skill_name == "speed":
+				GlobalStats.update_player_stat("speed", move_speed)
+			elif skill_name == "jump":
+				GlobalStats.update_player_stat("jump", jump_force)
+			elif skill_name == "attack":
+				GlobalStats.update_player_stat("attack", attack_power)
+			elif skill_name == "health":
+				GlobalStats.update_player_stat("health", current_health)
 
+			#print("%s upgraded to level %d" % [skill_name, skill["level"]])
 			
 			print("%s upgraded to level %d" % [skill_name, skill["level"]])
 		else:

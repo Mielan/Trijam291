@@ -15,6 +15,10 @@ run/main_scene="res://scene/Main_3D.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+GlobalStats="*res://script/autoloads/GlobalStats.gd"
+
 [input]
 
 ui_left={
@@ -53,6 +57,11 @@ ui_open_skill_tree={
 ui_debug={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":128,"position":Vector2(77, 21),"global_position":Vector2(86, 67),"factor":1.0,"button_index":8,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+ui_debug2={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":256,"position":Vector2(212, 10),"global_position":Vector2(221, 56),"factor":1.0,"button_index":9,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

@@ -54,7 +54,9 @@ func update_skill_labels():
 	if attack_label != null:
 		attack_label.text = "Attack: %d" % player.skill_tree["attack"]["level"]
 
-
+	var skillPointLabel = get_node("Panel/SkillPoints")
+	if skillPointLabel != null:
+		skillPointLabel.text = "Skill Points Remaining: %d" %player.skill_points
 
 func _on_close_pressed() -> void:
 	queue_free()  # Close the skill tree UI

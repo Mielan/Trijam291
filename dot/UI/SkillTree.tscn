@@ -17,70 +17,79 @@ offset_bottom = 644.0
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 0
 offset_left = 328.0
-offset_top = 87.0
+offset_top = 218.0
 offset_right = 844.0
-offset_bottom = 556.0
+offset_bottom = 457.0
 
 [node name="SpeedButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Upgrade Speed"
+alignment = 0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/SpeedButton"]
 layout_mode = 2
-offset_top = 35.0
-offset_right = 516.0
-offset_bottom = 58.0
-text = "Current Speed"
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 517.0
+offset_bottom = 26.0
+text = "Current Speed: 0"
+horizontal_alignment = 2
 
 [node name="JumpButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Upgrade Jump"
+alignment = 0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/JumpButton"]
 layout_mode = 2
-offset_left = 1.0
-offset_top = 35.0
-offset_right = 517.0
-offset_bottom = 58.0
-text = "Current Jump Level"
+offset_top = 2.0
+offset_right = 516.0
+offset_bottom = 25.0
+text = "Current Jump Level: 0"
+horizontal_alignment = 2
 
 [node name="AttackButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Upgrade Attack"
+alignment = 0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/AttackButton"]
 layout_mode = 2
-offset_top = 35.0
+offset_top = 3.0
 offset_right = 516.0
-offset_bottom = 58.0
-text = "Current Attack Level"
+offset_bottom = 26.0
+text = "Current Attack Level: 0"
+horizontal_alignment = 2
 
 [node name="HealthButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Upgrade Health"
+alignment = 0
 
 [node name="Label" type="Label" parent="Panel/VBoxContainer/HealthButton"]
 layout_mode = 2
-offset_top = 35.0
-offset_right = 516.0
-offset_bottom = 58.0
-text = "Current Health Level"
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 515.0
+offset_bottom = 25.0
+text = "Current Health Level: 0"
+horizontal_alignment = 2
 
-[node name="Skill Points Remaining" type="Label" parent="Panel"]
+[node name="SkillPoints" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 328.0
-offset_top = 556.0
+offset_top = 489.0
 offset_right = 844.0
-offset_bottom = 579.0
-text = "Skill Points Remaining
+offset_bottom = 512.0
+text = "Skill Points Remaining: 1
 "
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 582.0
-offset_top = 590.0
+offset_top = 521.0
 offset_right = 632.0
-offset_bottom = 621.0
+offset_bottom = 552.0
 text = "Close
 "
 
