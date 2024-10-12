@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnj5n80rcd4j5"]
+
+[ext_resource type="Script" path="res://script/control.gd" id="1_qqtog"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qqtog")
+
+[node name="Panelold" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 644.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panelold"]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 87.0
+offset_right = 844.0
+offset_bottom = 556.0
+
+[node name="UpgradeSpeedButton" type="Button" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade Speed"
+
+[node name="Current Speed" type="Label" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Current Speed"
+
+[node name="Upgrade Jump" type="Button" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade Jump"
+
+[node name="Current Jump Level" type="Label" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Current Jump Level"
+
+[node name="Upgrade Attack" type="Button" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade Attack"
+
+[node name="Current Attack Level" type="Label" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Current Attack Level"
+
+[node name="Upgrade Health" type="Button" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Upgrade Health"
+
+[node name="Current Health Level" type="Label" parent="Panelold/VBoxContainer"]
+layout_mode = 2
+text = "Current Health Level"
+
+[node name="Skill Points Remaining" type="Label" parent="Panelold"]
+layout_mode = 2
+offset_left = 328.0
+offset_top = 556.0
+offset_right = 844.0
+offset_bottom = 579.0
+text = "Skill Points Remaining
+"

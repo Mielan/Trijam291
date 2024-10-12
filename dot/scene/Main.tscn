@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://bbr3s74hd7cyw"]
 
-[ext_resource type="Texture2D" uid="uid://djqlg407jfgal" path="res://assets/player/dot.png" id="1_mr3q5"]
-[ext_resource type="Script" path="res://player.gd" id="1_p5uef"]
-[ext_resource type="Texture2D" uid="uid://br5ov5y0fvocy" path="res://assets/player/square_noun_002_35417.jpg" id="3_wt5w7"]
-[ext_resource type="Script" path="res://fall_zone.gd" id="4_j6dy1"]
-[ext_resource type="Texture2D" uid="uid://b7k1cseod3i2s" path="res://assets/condition/loose.png" id="5_r22ik"]
-[ext_resource type="Script" path="res://win.gd" id="5_y3ucl"]
-[ext_resource type="Texture2D" uid="uid://cl7nh60vr5obt" path="res://assets/condition/Flag_of_Libya_(1977–2011).svg.png" id="7_cjbmo"]
+[ext_resource type="Script" path="res://script/player.gd" id="1_8apj1"]
+[ext_resource type="Texture2D" uid="uid://djqlg407jfgal" path="res://assets/player/dot.png" id="2_d7m1j"]
+[ext_resource type="Texture2D" uid="uid://br5ov5y0fvocy" path="res://assets/player/square_noun_002_35417.jpg" id="3_fyoip"]
+[ext_resource type="Script" path="res://script/fall_zone.gd" id="4_3b5se"]
+[ext_resource type="Texture2D" uid="uid://b7k1cseod3i2s" path="res://assets/condition/loose.png" id="5_wc1x4"]
+[ext_resource type="Script" path="res://script/win (2).gd" id="6_2ggla"]
+[ext_resource type="Texture2D" uid="uid://cl7nh60vr5obt" path="res://assets/condition/Flag_of_Libya_(1977–2011).svg.png" id="7_8ffkj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_no6uy"]
 radius = 82.9759
@@ -22,11 +22,11 @@ size = Vector2(1000, 50)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(500, 200)
-script = ExtResource("1_p5uef")
+script = ExtResource("1_8apj1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_mr3q5")
+texture = ExtResource("2_d7m1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CircleShape2D_no6uy")
@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_foqlo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
 scale = Vector2(5, 0.34)
-texture = ExtResource("3_wt5w7")
+texture = ExtResource("3_fyoip")
 
 [node name="Platform2" type="StaticBody2D" parent="."]
 position = Vector2(1212, 400)
@@ -51,11 +51,11 @@ shape = SubResource("RectangleShape2D_foqlo")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform2"]
 scale = Vector2(5, 0.34)
-texture = ExtResource("3_wt5w7")
+texture = ExtResource("3_fyoip")
 
 [node name="FallZone" type="Area2D" parent="."]
 position = Vector2(600, 655)
-script = ExtResource("4_j6dy1")
+script = ExtResource("4_3b5se")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallZone"]
 position = Vector2(0, 3)
@@ -64,11 +64,11 @@ shape = SubResource("RectangleShape2D_6i0o6")
 
 [node name="Sprite2D" type="Sprite2D" parent="FallZone"]
 scale = Vector2(0.645, 0.035)
-texture = ExtResource("5_r22ik")
+texture = ExtResource("5_wc1x4")
 
 [node name="WinZone" type="Area2D" parent="."]
 position = Vector2(1117, 325)
-script = ExtResource("5_y3ucl")
+script = ExtResource("6_2ggla")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinZone"]
 scale = Vector2(4.385, 4.385)
@@ -77,7 +77,7 @@ shape = SubResource("RectangleShape2D_41mct")
 [node name="Sprite2D" type="Sprite2D" parent="WinZone"]
 position = Vector2(-2, 0)
 scale = Vector2(0.295, 0.575)
-texture = ExtResource("7_cjbmo")
+texture = ExtResource("7_8ffkj")
 
 [connection signal="body_entered" from="FallZone" to="FallZone" method="_on_body_entered"]
 [connection signal="body_exited" from="WinZone" to="WinZone" method="_on_body_exited"]

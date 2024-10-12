@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b563057e6t0sj"]
+
+[ext_resource type="Script" path="res://SpawnObjects/xp_dot.gd" id="1_iliw8"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_c3e2m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ay0v6"]
+radius = 0.251704
+
+[node name="xpDot" type="Area3D"]
+script = ExtResource("1_iliw8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.503013, 0, 0, 0, 0.503013, 0, 0, 0, 0.503013, 0, 0, 0)
+mesh = SubResource("SphereMesh_c3e2m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ay0v6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

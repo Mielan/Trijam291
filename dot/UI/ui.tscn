@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bi0c5wd2s8dpu"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="XPBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 33.0
+offset_right = 250.0
+offset_bottom = 60.0
+show_percentage = false
+
+[node name="XPLabel" type="Label" parent="XPBar"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 218.0
+offset_bottom = 25.0
+text = "XP: 0/100"
+horizontal_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 602.0
+offset_right = 956.0
+offset_bottom = 629.0
+max_value = 200.0
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="HealthBar"]
+layout_mode = 0
+offset_right = 631.0
+offset_bottom = 23.0
+text = "50/200"
+horizontal_alignment = 1
+
+[node name="TaskListContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 32.0
+offset_right = 1116.0
+offset_bottom = 133.0
+
+[node name="Task" type="Label" parent="TaskListContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+text = "Collect points and Levelup... only that you are the enemy too, leveling up yourself is levling up the enemies "
+autowrap_mode = 2
+max_lines_visible = 4
+
+[node name="SkillPointsLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 26.0
+offset_top = 58.0
+offset_right = 254.0
+offset_bottom = 81.0
+text = "Skill Points: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
